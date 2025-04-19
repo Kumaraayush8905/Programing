@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Hamburger Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="sidebar">
+        <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#godam">Shop Management</a></li>
+            <li><a href="#calculators">Calculators</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Sections -->
+    <section id="home" class="section">Home Section</section>
+    <section id="about" class="section">About Section</section>
+    <section id="products" class="section">Products Section</section>
+    <section id="godam" class="section">Shop Management Section</section>
+    <section id="calculators" class="section">Calculators Section</section>
+    <section id="location" class="section">Location Section</section>
+    <section id="contact" class="section">Contact Us Section</section>
+
+    <script>
+        // Toggle hamburger menu and sidebar
+        const hamburger = document.querySelector('.hamburger');
+        const sidebar = document.querySelector('.sidebar');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active'); // Toggle hamburger animation
+            sidebar.classList.toggle('active'); // Toggle sidebar slide
+        });
+    </script>
+</body>
+</html>

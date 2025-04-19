@@ -1,0 +1,143 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif; /* Clean font */
+    background: linear-gradient(467deg, #000000, #8e8e8e); /* Gradient background */
+    color: #fff; /* Text color */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Hamburger menu icon */
+.hamburger {
+    position: fixed; /* Fixed position for menu button */
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* High z-index to stay above menu */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hamburger icon bars */
+.hamburger .bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff; /* White bars */
+    margin: 6px 0; /* Spacing between bars */
+    transition: all 0.3s ease; /* Smooth transition for animation */
+}
+
+/* Hamburger icon animation when active */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Rotate first bar */
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0; /* Hide middle bar */
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px); /* Rotate last bar */
+}
+
+/* Sidebar menu */
+.sidebar {
+    position: fixed; /* Fixed position for sidebar */
+    top: 0;
+    left: -300px; /* Hidden initially */
+    width: 300px; /* Sidebar width */
+    height: 100vh; /* Full height */
+    background: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Smooth slide animation */
+    z-index: 999; /* Below hamburger but above content */
+}
+
+/* Sidebar when active */
+.sidebar.active {
+    left: 0; /* Slide in from left */
+    
+    border-radius: 0px 50px 50px 0px; /* Rounded corners */
+}
+
+/* Navigation list */
+.nav-list {
+    list-style: none; /* Remove default list styles */
+    padding: 100px 20px; /* Padding for nav items */
+    background: linear-gradient(467deg, #000000, #363636);
+    box-shadow: 10px 0px 20px black;
+    /* border: 2px solid white; */
+    height: 100vh;
+    border-radius: 0px 50px 50px 0px;
+}
+
+/* Navigation items */
+.nav-list li {
+    margin: 20px 0; /* Spacing between items */
+}
+
+/* Navigation links */
+.nav-list li a {
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* White text */
+    font-size: 1.5rem; /* Font size */
+    display: block; /* Full-width clickable area */
+    padding: 2px; /* Padding for better touch area */
+    position: relative; /* For pseudo-element animation */
+    overflow: hidden; /* Hide overflow for animation */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect for nav links */
+.nav-list li a:hover {
+    color: #00ff88; /* Neon green on hover */
+}
+
+/* Underline animation for nav links */
+.nav-list li a::after {
+    content: ''; /* Empty pseudo-element */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #00ff88; /* Neon green underline */
+    transform: translateX(-100%); /* Hidden initially */
+    transition: transform 0.3s ease; /* Smooth slide */
+}
+
+/* Show underline on hover */
+.nav-list li a:hover::after {
+    transform: translateX(0); /* Slide in underline */
+}
+
+/* Main content sections */
+.section {
+    padding: 100px 20px; /* Padding for sections */
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; /* Large text */
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    margin: 20px; /* Spacing between sections */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: transform 0.5s ease; /* Smooth scale on scroll */
+}
+
+/* Scale effect when section is in view */
+.section:hover {
+    transform: scale(1.02); /* Slight scale on hover */
+}
+
+/* Smooth scrolling behavior */
+html {
+    scroll-behavior: smooth; /* Smooth scroll for anchor links */
+}
